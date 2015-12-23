@@ -7,13 +7,17 @@ namespace PayslipGenerator.Factory
     {
         public static Payslip generate(Employee employee)
         {
-            string name = string.Concat(employee.FirstName, " ", employee.LastName);
-            return new Payslip(name, 
+            return new Payslip(getName(employee.FirstName, employee.LastName), 
                 employee.PaymentStartDate, 
                 calculateGrossIncome(employee.AnnualSalary),
                 calculateIncomeTax(employee.AnnualSalary),
                 calculateSuper(calculateGrossIncome(employee.AnnualSalary), employee.SuperRate)
                 );
+        }
+
+        private static string getName(string firstName, string lastName)
+        {
+            return string.Concat(firstName, " ", lastName);
         }
 
         private static int calculateGrossIncome(int annualSalary)
