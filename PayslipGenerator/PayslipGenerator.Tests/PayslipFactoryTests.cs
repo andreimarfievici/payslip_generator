@@ -73,19 +73,19 @@ namespace PayslipGenerator.Tests
             }
             else if (18200 < annualSalary && annualSalary <= 37000)
             {
-                incomeTax = Convert.ToInt32(Math.Round((annualSalary - 18200) * 0.19/12));
+                incomeTax = Convert.ToInt32(Math.Round((annualSalary - 18200) * 0.19) / 12);
             }
             else if (37000 < annualSalary && annualSalary <= 80000)
             {
-                incomeTax = Convert.ToInt32(3572 + Math.Round((annualSalary - 37000) * 0.325/12));
+                incomeTax = Convert.ToInt32(Math.Round(3572 + (annualSalary - 37000) * 0.325) / 12);
             }
             else if (80000 < annualSalary && annualSalary <= 180000)
             {
-                incomeTax = Convert.ToInt32(17547 + Math.Round((annualSalary - 80000) * 0.37/12));
+                incomeTax = Convert.ToInt32(Math.Round(17547 + (annualSalary - 80000) * 0.37) / 12);
             }
             else if (annualSalary > 180000)
             {
-                incomeTax = Convert.ToInt32(54547 + Math.Round((annualSalary - 180000) * 0.45/12));
+                incomeTax = Convert.ToInt32(Math.Round(54547 + (annualSalary - 180000) * 0.45) / 12);
             }
 
             return incomeTax;

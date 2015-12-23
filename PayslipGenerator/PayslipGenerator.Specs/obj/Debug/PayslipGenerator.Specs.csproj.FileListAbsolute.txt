@@ -1,0 +1,11 @@
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\Default.srprofile
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\PayslipGenerator.Specs.dll.config
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\PayslipGenerator.Specs.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\PayslipGenerator.Specs.pdb
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\TechTalk.SpecFlow.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\bin\Debug\TechTalk.SpecRun.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\obj\Debug\PayslipGenerator.Specs.csprojResolveAssemblyReference.cache
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\obj\Debug\PayslipGenerator.Specs.dll
+C:\git\stuff\PayslipGenerator\PayslipGenerator.Specs\obj\Debug\PayslipGenerator.Specs.pdb
