@@ -17,6 +17,38 @@ namespace PayslipGenerator.Specs.Steps
         Employee employee;
         Payslip payslip;
         private readonly string CHROMEDRIVER_PATH = string.Concat(System.IO.Directory.GetCurrentDirectory(), "\\..\\PayslipGenerator.Specs\\chromedriver");
+        const int iisPort = 2020;
+        private readonly string _applicationName;
+        private Process _iisProcess;
+
+        private void StartIIS()
+        {
+            var applicationPath = GetApplicationPath(_applicationName);
+            var programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+
+            _iisProcess = new Process();
+            _iisProcess.StartInfo.FileName = programFiles + "\IIS Express\iisexpress.exe";
+            _iisProcess.StartInfo.Arguments = string.Format("/path:"{ 0}
+            " /port:{1}", applicationPath, iisPort);
+            _iisProcess.Start();
+        }
+
+
+        protected virtual string GetApplicationPath(string applicationName)
+        {
+            var solutionFolder = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)));
+            return Path.Combine(solutionFolder, applicationName);
+        }
+
+
+        public string GetAbsoluteUrl(string relativeUrl)
+        {
+            if (!relativeUrl.StartsWith("/"))
+            {
+                relativeUrl = "/" + relativeUrl;
+            }
+            return String.Format("http://localhost:{0}{1}", iisPort, relativeUrl);
+        }
 
         [Before]
         public void setUp()
