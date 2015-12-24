@@ -54,6 +54,7 @@
                     <asp:ListItem Text="April" Value="April"></asp:ListItem>
                     <asp:ListItem Text="May" Value="May"></asp:ListItem>
                     <asp:ListItem Text="June" Value="June"></asp:ListItem>
+                    <asp:ListItem Text="July" Value="July"></asp:ListItem>
                     <asp:ListItem Text="August" Value="August"></asp:ListItem>
                     <asp:ListItem Text="September" Value="September"></asp:ListItem>
                     <asp:ListItem Text="October" Value="October"></asp:ListItem>
