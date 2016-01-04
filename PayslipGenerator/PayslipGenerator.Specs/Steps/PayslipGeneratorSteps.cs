@@ -23,7 +23,6 @@ namespace PayslipGenerator.Specs.Steps
         {
             driver = new ChromeDriver(CHROMEDRIVER_PATH);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-            employee = new Employee("John", "Snow", 123456, 7.89, "July");
         }
 
         [Given]
@@ -48,7 +47,27 @@ namespace PayslipGenerator.Specs.Steps
             payslip = PayslipFactory.generate(employee);
             driver.FindElement(By.Id("MainContent_GeneratePayslip")).Click();
         }
-        
+
+        [Given(@"I have (invalid|valid) employee details")]
+        public void Given_I_have_invalid_employee_details(string employeeType)
+        {
+            if (employeeType.Equals("valid"))
+            {
+                employee = new Employee("John", "Snow", 123456, 7.89, "July");
+            }
+            else
+            {
+                employee = new Employee("Invalid", "Annual Salary", -58000, 10, "March");
+            }    
+        }
+
+        [Then]
+        public void Then_I_should_see_an_error()
+        {
+            Assert.AreEqual("Please check if all fields are valid!", driver.FindElement(By.Id("MainContent_GeneratePayslipErrorLabel")).Text);
+        }
+
+
         [Then]
         public void Then_I_should_see_payslip_information()
         {

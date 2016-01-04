@@ -18,8 +18,8 @@ namespace PayslipGenerator.Specs.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("PayslipGenerator", Description="In order to pay employees\nAs an HR administrator\nI want to be able to generate pa" +
-        "yslips", SourceFile="Features\\PayslipGenerator.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("PayslipGenerator", Description="In order to pay employees\r\nAs an HR administrator\r\nI want to be able to generate " +
+        "payslips", SourceFile="Features\\PayslipGenerator.feature", SourceLine=0)]
     public partial class PayslipGeneratorFeature
     {
         
@@ -32,8 +32,8 @@ namespace PayslipGenerator.Specs.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PayslipGenerator", "In order to pay employees\nAs an HR administrator\nI want to be able to generate pa" +
-                    "yslips", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PayslipGenerator", "In order to pay employees\r\nAs an HR administrator\r\nI want to be able to generate " +
+                    "payslips", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,11 +73,33 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I am on the payslip generator page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("I enter employee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have valid employee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I generate payslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I enter employee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
+ testRunner.And("I generate payslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
  testRunner.Then("I should see payslip information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("User should see an error if he generates payslip for invalid employee details", SourceLine=12)]
+        public virtual void UserShouldSeeAnErrorIfHeGeneratesPayslipForInvalidEmployeeDetails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User should see an error if he generates payslip for invalid employee details", ((string[])(null)));
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+ testRunner.Given("I am on the payslip generator page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.And("I have invalid employee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.When("I enter employee details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And("I generate payslip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then("I should see an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
