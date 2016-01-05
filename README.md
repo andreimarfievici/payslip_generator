@@ -81,35 +81,35 @@ Scenario: User should see an error if he generates payslip for invalid employee 
 We can build this literally step by step:
 
 - *"Given I am on the payslip generator page"* 
-  -- we write selenium tests that will fails because there is no page
-  -- we go ahead and build PayslipGenerator.aspx in the PayslipGenerator project
-  -- we run the step and it will pass
+    - we write selenium tests that will fails because there is no page
+    - we go ahead and build PayslipGenerator.aspx in the PayslipGenerator project
+    - we run the step and it will pass
 
 - *"And I have valid employee details"* 
-  -- we write employee unit tests in PayslipGenerator.Tests and they fail because there is no Employee
-  -- we generate *Api > Employee* model class in PayslipGenerator
-  -- we run unit tests and they pass
+    - we write employee unit tests in PayslipGenerator.Tests and they fail because there is no Employee
+    - we generate *Api > Employee* model class in PayslipGenerator
+    - we run unit tests and they pass
 
 - *"When I enter employee details"*
-  -- we write selenium steps to interact with the page and they fail because there are no fields to interact with
-  -- we create them in the .aspx page and hook them in PayslipGenerator.aspx.cs
-  -- we run the tests and they pass
+    - we write selenium steps to interact with the page and they fail because there are no fields to interact with
+    - we create them in the .aspx page and hook them in PayslipGenerator.aspx.cs
+    - we run the tests and they pass
 
 - *"And I generate payslip"*
-  -- we add a button on the page to generate payslip
-  -- we write unit tests for PayslipFactory and Payslip using rules provided to calculate tax
-  -- tests will drive the implementation of the PayslipFactory and the Payslip model class
-  -- we run the tests and they pass
+    - we add a button on the page to generate payslip
+    - we write unit tests for PayslipFactory and Payslip using rules provided to calculate tax
+    - tests will drive the implementation of the PayslipFactory and the Payslip model class
+    - we run the tests and they pass
 
 - *"Then I should see payslip information"*
-  -- we write selenium tests and they fail because there is now view of the payslip
-  -- we add it to the .aspx page
-  -- we run the tests and they pass
+    - we write selenium tests and they fail because there is now view of the payslip
+    - we add it to the .aspx page
+    - we run the tests and they pass
 
 - *"Then I should see an error"*
-  -- we write selenium tests and they fail because there is no validation
-  -- we go ahead an implement the validation before generating the payslip in *isFormValid()*
-  -- run tests and they pass
+    - we write selenium tests and they fail because there is no validation
+    - we go ahead an implement the validation before generating the payslip in *isFormValid()*
+    - run tests and they pass
 
 ##Advantages of using BDD and TDD
 
