@@ -81,7 +81,7 @@ Scenario: User should see an error if he generates payslip for invalid employee 
 We can build this literally step by step:
 
 - *"Given I am on the payslip generator page"* 
-    - we write selenium tests that will fails because there is no page
+    - we write selenium tests that will fail because there is no page
     - we go ahead and build PayslipGenerator.aspx in the PayslipGenerator project
     - we run the step and it will pass
 
